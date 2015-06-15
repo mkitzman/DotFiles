@@ -29,6 +29,7 @@ alias remotetags="git ls-remote --tags origin"
 source ~/.git-prompt.sh
 PS1="\[\e[1;32m\]\u@\h\[\e[1;34m\] \w\[\e[0m\]\$(__git_ps1)\[\e[1;34m\] \$\[\e[0m\] "
 
+#Get current branch
 function parse_git_branch {
   ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
   echo "("${ref#refs/heads/}")"
